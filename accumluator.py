@@ -201,6 +201,7 @@ def get_materials_in_cat(cat, work_orders):
     letter = get_cat_letter(cat)
     new_list = []
     for order in work_orders:
+        if order == None: continue
         filtered_materials = [material for material in order['materials'] if material['id'].startswith(letter)]
         if len(filtered_materials) == 0:
             continue
